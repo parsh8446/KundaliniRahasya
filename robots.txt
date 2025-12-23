@@ -1,3 +1,3 @@
 User-agent: *
 Disallow:
-Sitemap: https://7142b0a0.kundalinirahasya.pages.dev/sitemap.xml
+Sitemap: https://kundalinirahasya.in/sitemap.xml
