@@ -1,9 +1,0 @@
-# 1. Allow YouTube to see your site as the origin
-/*
-  Referrer-Policy: strict-origin-when-cross-origin
-
-# 2. Ensure your own site doesn't block frames globally 
-# (Note: This allows YOUR site to be framed, but more importantly, 
-# helps avoid header conflicts with YouTube's own SAMEORIGIN policy)
-/*
-  ! X-Frame-Options
