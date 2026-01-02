@@ -39,4 +39,26 @@
                   this.classList.add('is-loaded');
                }, false);
          }
-      }</script></body></html>
+      }</script><script>/**
+ * Speed Fix: This script intercepts the Facebook SDK 
+ * and forces it to wait until the page is fully ready.
+ */
+(function() {
+    window.addEventListener('load', function() {
+        // We wait 3 seconds after the window is loaded
+        setTimeout(function() {
+            if (window.FB) {
+                // If FB is already here, just re-parse
+                FB.XFBML.parse();
+            } else {
+                // Manually trigger the SDK load if it hasn't started
+                var js, fjs = document.getElementsByTagName('script')[0];
+                if (document.getElementById('facebook-jssdk')) return;
+                js = document.createElement('script'); 
+                js.id = 'facebook-jssdk';
+                js.src = "https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v12.0";
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }, 3000); 
+    });
+})();</script></body></html>
